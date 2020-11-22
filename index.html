@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>KHelifa Saif Eddine</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="Home.css">
+    <!----Lottie-->
+    <script id="lottie" src="lottie.js"></script>
+  
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+              <img class = "image" src="Icon.png" />
+                
+            </div>
+
+            <ul class="list-unstyled components">
+             
+                <li class = "active">
+                    <a href="index.html" >Home</a>
+                </li>
+                <li> 
+                    <a href="MYCV.html">Resume</a>
+                </li>
+                <li >
+                    <a href="Skills.Html">Skills</a>
+                </li>
+                
+            </ul>
+
+          
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://github.com/KhelifaSaifEddine" class="download"><img id="Github" src="Github.png"/></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=lxmWPPu-edM" class="download"><img id="Youtube" src="Youtube.png"/></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/saif-eddine-khelifa-5669a8168/" class="download"><img id="Linkdn" src="Linkdn.png"/></a>
+                </li>
+            </ul>
+      
+
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                </div>
+            </nav>        
+                 <!---ANIMATION-->
+                 <div id="finish">
+                    <div id ="Character"></div>
+                    <img id="Homepage" src="HomePage.png"/>
+                </div>
+                <div id ="Choice"></div>
+                
+         </div>
+  
+         
+          
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script id="script" > 
+        var animation = bodymovin.loadAnimation({
+                        container: document.getElementById('Character'),
+                        renderer: 'svg',
+                        autoplay: false,
+                        path: "Character.json",
+          })
+           var anime =true
+    </script>
+    <script id="script1" > 
+        var animation1 = bodymovin.loadAnimation({
+                        container: document.getElementById("Choice"),
+                        renderer: 'svg',
+                        autoplay: true,
+                        path: "Choice.json",
+                        loop : true
+          })
+           var anime =true
+    </script>
+    <script type="text/javascript">
+            
+      
+        $(document).ready(function () {
+            Begining = true
+            if(Begining == true){
+            $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+                $('#Homepage').toggleClass('active');
+                $('#Character').toggleClass('active');
+                $('#Choice').toggleClass('active');
+             if(anime){
+                        animation.setDirection(1)
+                        animation.play();
+                    
+                        animation1.play();
+                        anime = false
+             }else{
+                        animation.setDirection(-1)
+                        animation.play();                        
+                       
+                        animation1.play();
+                        anime = true
+             }
+             
+            }
+            Begining = false
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+                $('#Homepage').toggleClass('active');
+                $('#Character').toggleClass('active');
+                $('#Choice').toggleClass('active');
+             if(anime){
+                        animation.setDirection(1)
+                        animation.play();
+                    
+                        animation1.play();
+                        anime = false
+             }else{
+                        animation.setDirection(-1)
+                        animation.play();                        
+                       
+                        animation1.play();
+                        anime = true
+             }
+             
+            
+            });
+        });
+    </script>
+</body>
+
+</html>
